@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 40 10% 90%;
+    --card: 220 12% 12%;
+    --card-foreground: 40 10% 90%;
+    --primary: 43 90% 50%;
+    --primary-foreground: 220 15% 8%;
+    --secondary: 220 10% 16%;
+    --secondary-foreground: 40 10% 85%;
+    --muted: 220 10% 18%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 43 70% 40%;
+    --accent-foreground: 40 10% 95%;
+    --border: 220 10% 20%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Gold gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(43 90% 55%), hsl(35 85% 45%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Gold card borders */
+  .border-gold {
+    border: 1px solid hsl(43 70% 40% / 0.4);
+  }
+
+  .border-gold-bright {
+    border: 1.5px solid hsl(43 90% 50% / 0.7);
+  }
+
+  /* Section heading style */
+  .section-heading {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: linear-gradient(135deg, hsl(43 90% 55%), hsl(35 85% 45%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @media (min-width: 768px) {
+    .section-heading {
+      font-size: 3rem;
+    }
+  }
+
+  /* Scroll reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: blur(4px);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  /* Stagger delays */
+  .stagger-1 { transition-delay: 80ms; }
+  .stagger-2 { transition-delay: 160ms; }
+  .stagger-3 { transition-delay: 240ms; }
+  .stagger-4 { transition-delay: 320ms; }
+
+  /* Button hover glow */
+  .btn-glow {
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 0 0 hsl(43 90% 50% / 0);
+  }
+  .btn-glow:hover {
+    box-shadow: 0 0 20px 2px hsl(43 90% 50% / 0.35);
+  }
+
+  /* Active press feedback */
+  .press-active:active {
+    transform: scale(0.97);
+  }
+}
