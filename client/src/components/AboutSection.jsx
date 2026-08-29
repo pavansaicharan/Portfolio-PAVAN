@@ -87,13 +87,14 @@ export default function AboutSection() {
         <div className="md:col-span-2 flex justify-center">
           <div className="w-64 sm:w-72 aspect-[3/5] rounded-3xl overflow-hidden border-gold-bright shadow-2xl group">
             <img
-              src={aboutImg}
-              alt="Pavan Sai Charan Nayudu"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
+                src={aboutImg}
+                alt="Pavan Sai Charan Nayudu"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
           </div>
         </div>
       </div>
     </section>
   );
 }
+{/*className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"*/}

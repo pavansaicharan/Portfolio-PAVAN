@@ -4,7 +4,7 @@ export const portfolioData = {
   profile: {
     name: "Pavan Sai Charan Nayudu",
     initials: "P",
-    shortName: "PAVAN",
+    shortName: "PAVAN NAYUDU",
     role: "Full Stack Web Developer & AI / ML Enthusiast",
     email: "pavansaicharan2004@gmail.com",
     phone: "(+91) 8500756091",
@@ -19,7 +19,7 @@ export const portfolioData = {
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com",
       email: "mailto:pavansaicharan2004@gmail.com",
-      cv: "https://example.com/cv",
+      cv: "/Pavan_Sai_Charan_Nayudu_CV.pdf",
     },
     skills: [
       "Python",

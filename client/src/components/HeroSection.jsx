@@ -2,6 +2,7 @@ import React from 'react';
 import { useLang } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import heroImg from '../assets/hero-portrait.png';
+import cvFile from '../assets/Pavan_Sai_Charan_Nayudu_CV.pdf';
 import { Instagram, Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 export default function HeroSection() {
@@ -61,7 +62,7 @@ export default function HeroSection() {
           {/* CTA Action Buttons */}
           <div className="flex flex-wrap gap-4 pt-2">
             <a
-              href="https://example.com/cv"
+              href={cvFile}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 border border-foreground text-foreground font-semibold text-sm tracking-wider hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-200 press-active btn-glow rounded-md"
