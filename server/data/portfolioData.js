@@ -15,7 +15,7 @@ export const portfolioData = {
       internship: "Full Stack Web Development Intern at Blackbuck Engineers Pvt. Ltd",
     },
     socialLinks: {
-      github: "https://github.com",
+      github: "https://github.com/pavansaicharan",
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com",
       email: "mailto:pavansaicharan2004@gmail.com",
