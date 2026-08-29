@@ -1,10 +1,12 @@
 
 # Portfolio-PavanNayudu
-My Portfolio[React,Express,vercel for deployment]
+My Portfolio [React, Express, Vercel for deployment]
 
-# Rohit Mallade – Full-Stack Portfolio (React + Express + Node.js)
+---
 
-A clean, human-crafted full-stack web application built with **React (JavaScript / JSX)** on the frontend and **Express.js (Node.js)** on the backend.
+## 📖 Overview
+A clean, full‑stack portfolio web application built with **React (JavaScript / JSX)** on the frontend and **Express.js (Node.js)** on the backend.  
+It showcases projects, experience, education, and achievements, with a modern responsive design and multilingual support.
 
 ---
 
@@ -112,4 +114,3 @@ npm run server
 - **Multilingual Support**: Real-time toggle between **English (EN)** and **German (DE)**.
 - **Full-Stack Integration**: Interactive contact form communicates directly with the Express REST API.
 - **Modern Responsive Design**: Dark theme with gold accents, smooth scroll animations, and mobile-friendly navigation.
->>>>>>> 344df43 (Initial commit for antigravity project)
