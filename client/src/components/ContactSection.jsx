@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLang } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { Instagram, Github, Linkedin, Mail, Phone, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function ContactSection() {
   const { t } = useLang();
@@ -194,7 +194,7 @@ export default function ContactSection() {
         {/* Social Links Footer */}
         <div className="flex justify-center items-center gap-8 pt-8">
           <a
-            href="https://github.com"
+            href="https://github.com/pavansaicharan"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors press-active"
@@ -206,7 +206,7 @@ export default function ContactSection() {
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/pavan-sai-charan-nayudu-001713370/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-blue-400 transition-colors press-active"
@@ -215,18 +215,6 @@ export default function ContactSection() {
               <Linkedin size={22} />
             </div>
             <span className="text-xs font-medium">LinkedIn</span>
-          </a>
-
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-pink-400 transition-colors press-active"
-          >
-            <div className="p-3 rounded-full bg-secondary">
-              <Instagram size={22} />
-            </div>
-            <span className="text-xs font-medium">Instagram</span>
           </a>
         </div>
 
