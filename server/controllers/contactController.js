@@ -15,24 +15,31 @@ const buildTransporter = () => {
     GMAIL_APP_PASSWORD,
   } = process.env;
 
-  if (SMTP_HOST && SMTP_PORT && SMTP_USER && SMTP_PASS) {
+  const smtpHost = SMTP_HOST?.trim();
+  const smtpPort = SMTP_PORT?.trim();
+  const smtpUser = SMTP_USER?.trim();
+  const smtpPass = SMTP_PASS?.trim();
+  const gmailUser = GMAIL_USER?.trim();
+  const gmailAppPassword = GMAIL_APP_PASSWORD?.trim();
+
+  if (smtpHost && smtpPort && smtpUser && smtpPass) {
     return nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: Number(SMTP_PORT),
-      secure: Number(SMTP_PORT) === 465,
+      host: smtpHost,
+      port: Number(smtpPort),
+      secure: Number(smtpPort) === 465,
       auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
+        user: smtpUser,
+        pass: smtpPass,
       },
     });
   }
 
-  if (GMAIL_USER && GMAIL_APP_PASSWORD) {
+  if (gmailUser && gmailAppPassword) {
     return nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: GMAIL_USER,
-        pass: GMAIL_APP_PASSWORD,
+        user: gmailUser,
+        pass: gmailAppPassword,
       },
     });
   }
@@ -50,7 +57,7 @@ const sendContactEmail = async ({ name, email, message }) => {
     console.log(`Name: ${name}`);
     console.log(`Email: ${email}`);
     console.log(`Message: ${message}`);
-    return;
+    return { sent: false, reason: 'Email configuration missing' };
   }
 
   await transporter.sendMail({
@@ -64,9 +71,11 @@ const sendContactEmail = async ({ name, email, message }) => {
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Message:</strong></p>
-      <p>${message.replace(/\n/g, '<br />')}</p>
+      <p>${String(message).replace(/\n/g, '<br />')}</p>
     `,
   });
+
+  return { sent: true };
 };
 
 /**
@@ -110,24 +119,36 @@ export const submitContactMessage = async (req, res) => {
   console.log(`[Contact] New message received from ${newMessage.name} <${newMessage.email}>`);
 
   try {
-    await sendContactEmail(newMessage);
+    const emailResult = await sendContactEmail(newMessage);
+
+    if (emailResult && emailResult.sent === false) {
+      return res.status(201).json({
+        success: true,
+        message: 'Your message was received successfully. Email delivery is not configured yet on this deployment.',
+        data: {
+          id: newMessage.id,
+          name: newMessage.name,
+          createdAt: newMessage.createdAt,
+        },
+      });
+    }
+
+    return res.status(201).json({
+      success: true,
+      message: 'Thank you for reaching out! Your message has been received.',
+      data: {
+        id: newMessage.id,
+        name: newMessage.name,
+        createdAt: newMessage.createdAt,
+      },
+    });
   } catch (error) {
     console.error('[Mail] Failed to send contact email:', error);
     return res.status(500).json({
       success: false,
-      error: 'Your message was saved, but the email could not be delivered. Please try again later.',
+      error: 'The server could not send the email. Please check the SMTP/Gmail configuration in Vercel and try again.',
     });
   }
-
-  return res.status(201).json({
-    success: true,
-    message: 'Thank you for reaching out! Your message has been received.',
-    data: {
-      id: newMessage.id,
-      name: newMessage.name,
-      createdAt: newMessage.createdAt,
-    },
-  });
 };
 
 /**
