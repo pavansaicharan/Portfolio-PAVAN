@@ -36,7 +36,16 @@ export default function ContactSection() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      const responseText = await response.text();
+      let data = {};
+
+      if (responseText) {
+        try {
+          data = JSON.parse(responseText);
+        } catch {
+          throw new Error(responseText || 'Server returned an invalid response.');
+        }
+      }
 
       if (!response.ok) {
         throw new Error(data.error || 'Failed to send message');
