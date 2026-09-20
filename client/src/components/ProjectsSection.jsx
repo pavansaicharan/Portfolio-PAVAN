@@ -80,7 +80,7 @@ export default function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="px-6 pb-6 pt-2 space-y-4">
+              <div className="px-6 pb-6 pt-2">
                 <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
                     <span
@@ -91,10 +91,6 @@ export default function ProjectsSection() {
                     </span>
                   ))}
                 </div>
-
-                <button className="w-full py-2.5 rounded-xl border border-border bg-secondary/40 text-foreground font-semibold text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-200 press-active">
-                  VIEW MY PROJECT
-                </button>
               </div>
             </div>
           ))}
