@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLang } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import aboutImg from '../assets/about-portrait.png';
 
 const skillCategories = [
   {
@@ -30,20 +29,8 @@ export default function AboutSection() {
     <section id="about" className="py-24 px-4 sm:px-8 bg-secondary/20">
       <div
         ref={revealRef}
-        className="reveal max-w-7xl mx-auto grid md:grid-cols-[420px_minmax(0,1fr)] gap-10 lg:gap-14 items-center"
+        className="reveal max-w-6xl mx-auto"
       >
-        {/* Portrait Column */}
-        <div className="flex justify-center md:justify-start">
-          <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-[390px] md:h-[390px] rounded-full overflow-hidden border-[4px] border-gold-bright shadow-[0_20px_60px_rgba(0,0,0,0.35)] bg-black group">
-            <img
-              src={aboutImg}
-              alt="Pavan Sai Charan Nayudu"
-              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-            />
-          </div>
-        </div>
-
-        {/* Bio & Skills Column */}
         <div className="space-y-6">
           <div className="space-y-2">
             <h2 className="section-heading text-left">{t('aboutTitle')}</h2>
@@ -57,7 +44,6 @@ export default function AboutSection() {
             <p>{t('aboutP2')}</p>
           </div>
 
-          {/* Skill Tag Categories */}
           <div className="pt-2 space-y-4">
             <h4 className="text-lg text-primary font-semibold flex items-center gap-2">
               <span>🎯</span> {t('skillsTitle')}
@@ -83,7 +69,6 @@ export default function AboutSection() {
               ))}
             </div>
 
-            {/* Language proficiency badge */}
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
               <span className="font-semibold text-foreground">Languages:</span>
               <span className="px-2.5 py-1 rounded bg-secondary border border-border">Telugu (Native)</span>

@@ -12,9 +12,9 @@ export const translations = {
     contact: "Contact",
     downloadCv: "DOWNLOAD CV",
     contactInfo: "CONTACT INFO",
-    heroGreeting: "I BUILD DIGITAL SOLUTIONS THAT THINK AND SCALE.",
+    heroGreeting: "HELLO, I AM PAVAN SAI CHARAN NAYUDU",
     heroDesc:
-      "Information Technology undergraduate focused on AI, machine learning, and modern web development. I enjoy turning ideas into practical products through Python, React, full-stack engineering, and data-driven problem solving.",
+      "Information Technology undergraduate with a focus on Artificial Intelligence and Machine Learning. Skilled in Python programming, web development, and data processing, with hands-on experience in building practical applications and working with real-world datasets.",
     aboutTitle: "About Me",
     aboutSubtitle: "Full Stack Developer • AI & ML Enthusiast",
     aboutP1:
@@ -112,9 +112,9 @@ export const translations = {
     contact: "Kontakt",
     downloadCv: "LEBENSLAUF",
     contactInfo: "KONTAKT INFO",
-    heroGreeting: "ICH BAUE DIGITALE LÖSUNGEN, DIE DENKEN UND SKALIEREN.",
+    heroGreeting: "HALLO, ICH BIN PAVAN SAI CHARAN NAYUDU",
     heroDesc:
-      "Student der Informationstechnologie mit Fokus auf KI, maschinelles Lernen und moderne Webentwicklung. Ich liebe es, Ideen in praktische Produkte umzusetzen – mit Python, React, Full-Stack-Engineering und datengetriebenen Lösungen.",
+      "Student der Informationstechnologie mit Schwerpunkt Künstliche Intelligenz und Maschinelles Lernen. Erfahren in Python-Programmierung, Webentwicklung und Datenverarbeitung mit praktischer Erfahrung in realen Projekten.",
     aboutTitle: "Über Mich",
     aboutSubtitle: "Full-Stack-Entwickler • KI & ML Enthusiast",
     aboutP1:
