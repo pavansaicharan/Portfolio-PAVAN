@@ -17,7 +17,7 @@ export default function HeroSection() {
       >
         <div className="space-y-8 lg:space-y-10">
           <div className="inline-block px-3 py-1 rounded-full bg-secondary border border-gold text-xs font-semibold text-primary uppercase tracking-widest">
-            AI / ML & Full Stack Web Development
+            Full Stack Developer • AI & ML Enthusiast
           </div>
 
           <h1

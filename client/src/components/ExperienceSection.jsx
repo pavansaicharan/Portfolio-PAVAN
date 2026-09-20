@@ -43,10 +43,8 @@ export default function ExperienceSection() {
       <div ref={revealRef} className="reveal max-w-5xl mx-auto">
         <h2 className="section-heading mb-16">{t('experienceTitle')}</h2>
 
-        {/* Timeline Container */}
         <div className="relative">
-          {/* Vertical Center Line for Desktop */}
-          <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-accent/40 hidden md:block" />
+          <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-primary/20 hidden md:block" />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => {
@@ -58,50 +56,45 @@ export default function ExperienceSection() {
                     isEven ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
-                  {/* Content Card */}
                   <div
                     className={`md:w-[45%] ${
                       isEven ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'
                     }`}
                   >
-                    <div className="p-6 rounded-2xl bg-card border-gold-bright shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div className="p-7 rounded-3xl bg-card/95 border border-gold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                       <div
-                        className={`inline-flex items-center gap-1.5 text-xs text-primary font-semibold uppercase tracking-wider mb-2 px-2.5 py-1 rounded bg-primary/10 ${
+                        className={`inline-flex items-center gap-1.5 text-[11px] text-primary font-semibold uppercase tracking-[0.16em] mb-3 px-2.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 ${
                           isEven ? 'md:ml-auto' : ''
                         }`}
                       >
-                        <Briefcase size={14} />
+                        <Briefcase size={13} />
                         <span>{exp.type}</span>
                       </div>
                       <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
-                      <p className="text-primary font-medium text-sm mt-0.5">{exp.company}</p>
+                      <p className="text-primary font-medium text-sm mt-1">{exp.company}</p>
 
                       <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
                         {exp.description}
                       </p>
 
-                      {/* Bullet Highlights */}
-                      <ul className={`mt-3 space-y-1.5 text-xs text-muted-foreground ${isEven ? 'md:text-right' : 'md:text-left'}`}>
+                      <ul className={`mt-4 space-y-2 text-sm text-muted-foreground ${isEven ? 'md:text-right' : 'md:text-left'}`}>
                         {exp.highlights.map((bullet, bIdx) => (
-                          <li key={bIdx} className="leading-normal">
+                          <li key={bIdx} className="leading-relaxed">
                             • {bullet}
                           </li>
                         ))}
                       </ul>
 
-                      {/* Mobile Date Display */}
                       <p className="md:hidden flex items-center gap-1.5 text-xs text-muted-foreground mt-4 pt-3 border-t border-border">
                         <Calendar size={13} /> {exp.date}
                       </p>
                     </div>
                   </div>
 
-                  {/* Center Dot Indicator */}
                   <div className="hidden md:flex md:w-[10%] justify-center">
                     <div className="w-5 h-5 rounded-full bg-primary border-4 border-background shadow-md shadow-primary/40 ring-2 ring-primary/20" />
                   </div>
 
-                  {/* Desktop Date Display on opposite side */}
                   <div
                     className={`hidden md:block md:w-[45%] ${
                       isEven ? 'md:pl-12 text-left' : 'md:pr-12 text-right'

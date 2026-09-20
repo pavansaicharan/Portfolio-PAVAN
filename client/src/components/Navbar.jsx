@@ -33,7 +33,7 @@ export default function Navbar() {
             P
           </span>
           <span className="text-foreground font-semibold text-lg tracking-wider hidden sm:block">
-            PAVAN
+            Pavan
           </span>
         </a>
 

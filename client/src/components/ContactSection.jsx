@@ -78,9 +78,9 @@ export default function ContactSection() {
           {t('getInTouch')}
         </h2>
 
-        {/* Quick Contact & Status Details */}
-        <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
-          <div className="p-6 rounded-2xl bg-card border-gold space-y-2 flex flex-col justify-center">
+        {/* Quick Contact Details */}
+        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto text-center justify-center">
+          <div className="p-6 rounded-2xl bg-card border-gold space-y-2 flex flex-col justify-center min-h-[140px]">
             <p className="text-xs font-semibold tracking-widest text-primary uppercase">
               {t('sayHi')}
             </p>
@@ -92,7 +92,7 @@ export default function ContactSection() {
             </a>
           </div>
 
-          <div className="p-6 rounded-2xl bg-card border-gold space-y-2 flex flex-col justify-center">
+          <div className="p-6 rounded-2xl bg-card border-gold space-y-2 flex flex-col justify-center min-h-[140px]">
             <p className="text-xs font-semibold tracking-widest text-primary uppercase">
               Direct Phone
             </p>
@@ -102,15 +102,6 @@ export default function ContactSection() {
             >
               (+91) 8500756091
             </a>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-card border-gold space-y-2 flex flex-col justify-center">
-            <p className="text-xs font-semibold tracking-widest text-primary uppercase">
-              {t('currently')}
-            </p>
-            <p className="text-muted-foreground text-xs sm:text-sm font-medium">
-              {t('currentlyDesc')}
-            </p>
           </div>
         </div>
 

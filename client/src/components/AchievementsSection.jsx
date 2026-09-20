@@ -64,41 +64,39 @@ export default function AchievementsSection() {
           {achievements.map((achievement, index) => (
             <div
               key={achievement.id}
-              className={`rounded-2xl overflow-hidden bg-card border-gold shadow-lg group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 stagger-${
+              className={`rounded-3xl overflow-hidden bg-card/95 border border-gold shadow-lg group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 stagger-${
                 index + 1
               } flex flex-col justify-between`}
             >
               <div>
-                {/* Event Image with Badge */}
                 <div className="relative aspect-video overflow-hidden">
                   <img
                     src={achievement.image}
                     alt={achievement.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-                  <span className="absolute top-3 right-3 px-3 py-1 rounded-md bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider shadow-lg flex items-center gap-1">
-                    <Award size={13} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                  <span className="absolute top-3 right-3 px-3 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-[0.12em] shadow-md flex items-center gap-1">
+                    <Award size={12} />
                     {achievement.badge}
                   </span>
                 </div>
 
-                {/* Achievement Content */}
                 <div className="p-6 space-y-3">
                   <h3 className="text-lg font-bold text-foreground leading-snug">
                     {achievement.title}
                   </h3>
-                  <p className="text-primary text-xs font-semibold tracking-wide uppercase">
+                  <p className="text-primary text-[11px] font-semibold tracking-[0.14em] uppercase">
                     {achievement.subtitle}
                   </p>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {achievement.description}
                   </p>
 
-                  <ul className="pt-2 space-y-1 text-xs text-muted-foreground">
+                  <ul className="pt-2 space-y-2 text-xs text-muted-foreground">
                     {achievement.points.map((pt, pIdx) => (
-                      <li key={pIdx} className="flex items-center gap-1.5">
-                        <CheckCircle2 size={13} className="text-primary shrink-0" />
+                      <li key={pIdx} className="flex items-start gap-2">
+                        <CheckCircle2 size={13} className="text-primary shrink-0 mt-0.5" />
                         <span>{pt}</span>
                       </li>
                     ))}

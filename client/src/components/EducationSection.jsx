@@ -48,32 +48,28 @@ export default function EducationSection() {
           {education.map((edu) => (
             <div
               key={edu.id}
-              className="rounded-2xl overflow-hidden bg-card border-gold shadow-lg group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+              className="rounded-3xl overflow-hidden bg-card/95 border border-gold shadow-lg group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
             >
               <div>
-                {/* Campus Image */}
                 <div className="aspect-video overflow-hidden relative">
                   <img
                     src={edu.image}
                     alt={edu.school}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  <span className="absolute bottom-3 left-3 text-xs font-semibold px-2.5 py-1 rounded bg-black/70 text-primary border border-primary/40 backdrop-blur-sm flex items-center gap-1.5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                  <span className="absolute bottom-3 left-3 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-black/60 text-primary border border-primary/30 backdrop-blur-sm flex items-center gap-1.5">
                     <GraduationCap size={14} />
                     {edu.school}
                   </span>
                 </div>
 
-                {/* Education Info */}
                 <div className="p-6 space-y-3">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-lg font-bold text-foreground leading-snug">
-                      {edu.degree}
-                    </h3>
-                  </div>
+                  <h3 className="text-lg font-bold text-foreground leading-snug">
+                    {edu.degree}
+                  </h3>
 
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary/10 text-primary text-xs font-bold border border-primary/20">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-bold border border-primary/20">
                     <Award size={13} />
                     <span>{edu.gradeBadge}</span>
                   </div>
